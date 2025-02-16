@@ -25,6 +25,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/m
 - Prompts
 
 ... more to be added.
+## Features from Seekcat:
+- Add Keybinds
 
 Created by [Deity#0228] and [Abstract#8007]
 
@@ -32,7 +34,7 @@ Created by [Deity#0228] and [Abstract#8007]
 
 ### Get the Library
 ```lua
-local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/seekcat0/mercury-lib/master/src.lua"))()
 ```
 
 ### Create the GUI
@@ -41,7 +43,8 @@ local GUI = Mercury:Create{
     Name = "Mercury",
     Size = UDim2.fromOffset(600, 400),
     Theme = Mercury.Themes.Dark,
-    Link = "https://github.com/deeeity/mercury-lib"
+    Link = "https://github.com/seekcat0/mercury-lib"
+    Keybinds = Enum.KeyCode.LeftControl
 }
 ```
 

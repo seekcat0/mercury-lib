@@ -19,6 +19,7 @@ developers:
 discord Abstract#8007
 discord Deity#0228
 
+Re source: SeekCat033
 ]]
 
 local TweenService = game:GetService("TweenService")
@@ -92,7 +93,7 @@ local Library = {
 	DisplayName = nil,
 	DragSpeed = 0.06,
 	LockDragging = false,
-	ToggleKey = Enum.KeyCode.Home,
+	Keybinds = Enum.KeyCode.Home,
 	UrlLabel = nil,
 	Url = nil
 
@@ -435,7 +436,8 @@ function Library:create(options)
 		Name = "Mercury",
 		Size = UDim2.fromOffset(600, 400),
 		Theme = self.Themes[settings.Theme],
-		Link = "https://github.com/deeeity/mercury-lib"
+		Link = "https://github.com/deeeity/mercury-lib",
+		Keybinds = Enum.KeyCode.LeftControl
 	}, options)
 
 	if getgenv and getgenv().MercuryUI then
@@ -454,6 +456,7 @@ function Library:create(options)
 	end
 
 	self.CurrentTheme = options.Theme
+	self.Keybinds = options.Keybinds
 
 	local gui = self:object("ScreenGui", {
 		Parent = (RunService:IsStudio() and LocalPlayer.PlayerGui) or game:GetService("CoreGui"),
@@ -885,7 +888,7 @@ function Library:create(options)
 	settingsTab:keybind{
 		Name = "Toggle Key",
 		Description = "Key to show/hide the UI.",
-		Keybind = Enum.KeyCode.Delete,
+		Keybind = self.Keybinds or Enum.KeyCode.LeftControl,
 		Callback = function()
 			self.Toggled = not self.Toggled
 			Library:show(self.Toggled)
@@ -1011,7 +1014,7 @@ function Library:notification(options)
 		Position = UDim2.new(0, 0,0, 23),
 		Size = UDim2.new(1, 0, 100, 0),
 		TextSize = 16,
-		TextTransparency = 1,
+		--TextTransparency = 1,
 		TextWrapped = true,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,

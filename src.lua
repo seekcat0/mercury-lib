@@ -19,7 +19,7 @@ developers:
 discord Abstract#8007
 discord Deity#0228
 
-Re source: SeekCat033
+Edits source: SeekCat033
 ]]
 
 local TweenService = game:GetService("TweenService")
